@@ -49,5 +49,5 @@ def test_monitor_spend_a_day(mocker):
     worker.name = 'TEST'
     worker.hours = 0
     monitor = Monitor(worker)
-    monitor.spend_a_day()
+    monitor.spend_a_day()  # FIXME: gets stuck in an infinite loop, since work() and play() are being mocked.
     assert worker.hours >= 24
